@@ -1,18 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
+import { User } from "../Interface";
 
-export enum HairColor {
-  Blonde = "Blonde",
-  Brown = "Brown",
-  Pink = "Pink",
-}
-interface Props {
-  name: string;
-  age: number;
-  email?: string;
-  hairColor: HairColor;
-}
-
-export const Person: FC<Props> = ({ name, email, age, hairColor }) => {
+export const Person: FC<User> = ({ name, email, age, hairColor }) => {
   const [country, setCountry] = useState<string | null>("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
